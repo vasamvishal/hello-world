@@ -1,7 +1,7 @@
 import java.util.*;
 class Primearm
 {
- static void prime(int number)
+  void prime(int number)
 {
 
 for(int i=1;i<=number;i++)
@@ -17,45 +17,62 @@ count=count+1;
 }
 if(count==2)
 {
-System.out.println(i);
-//def(i);
+System.out.print(" "+i);
+
+def(i);
+
+
 //abc(i);
-}}}
 }
+}
+}
+
 
  void def(int n)
 {
 int sum=0;
 while(n!=0)
+//System.out.println(n);
 
 {
 int rem=n%10;
  sum=sum+rem*rem*rem;
 rem=rem/10;
+
+
 }
 if(n==sum)
 {
-System.out.println("armstrong number");
+
+System.out.println(n);
+
 }
 }
+
+
+//}
 //static void abc(int n)
 //{
 //int sum=0;
 //while(n!=0)
 //{
 //int rem=n%10;
- //sum=sum*10;
+//sum=sum*10;
 //rem=rem/10;
 //}
+
 
 //if(n==sum)
 //{
 //System.out.println("armstrong number");
 //}
 //}
- public static void main(String args[])
+
+public static void main(String args[])
 {
-System.out.println("armstrong number");
-prime(1000);
+Primearm p=new Primearm();
+//System.out.println("armstrong number");
+p.prime(10);
 
 }}
+
