@@ -136,6 +136,10 @@ console.log(arrChanged);
 
 prime(str)
 {
+  if(str<0)
+  {
+    return -1;
+  }
 let add= 0;
 let increment=" ";
 for(var i=1;i<=str;i++)
@@ -156,7 +160,9 @@ add=0;
 }  
 }
 console.log(increment);
-return increment;
+
+return 1;
+
 },
 
 palindrome(array)
@@ -213,6 +219,7 @@ var root1 = (-b+sqrt/2*a);
 var root2 = (-b-sqrt/2*a); 
 console.log(root1);
 console.log(root2);
+return 1;
 },
 
 bubbleSort(row,arr)

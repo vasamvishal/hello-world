@@ -18,6 +18,7 @@
  */
 var Utility=require('../../Utility/programs/utility');
 
+
 /** 
  * @description  variable is declared to use to acquire input class
  * @var {input} readline
@@ -27,10 +28,12 @@ var readline=Utility.input();
  * @description  variable is declared to use to define the range of numbers from 0-1000.
  * @var {number} str
  */
-var str=1000;
+var str=parseInt(1000);
+console.log(typeof str)
 
 /** 
  * @description variable is declared to require prime function.
  * @var {prime} str
  */
+
 Utility.prime(str);
