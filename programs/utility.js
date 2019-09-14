@@ -22,26 +22,26 @@ console.log(geek[k]);
 console.log("enter the number");
 for(let i=0;i<row;i++)
 {
-  for(let j=0;j<col;j++)
-  {
-   geek[i][j]=readline.question(" ");
-  }
+ for(let j=0;j<col;j++)
+{
+  geek[i][j]=readline.question(" ");
+}
 }
 console.log("enter the output");
-for(let i=0;i<row;i++)
-{for(let j=0;j<col;j++){
-console.log(geek[i][j]);
-}
-}
+console.log(geek);
 return geek;
 },
 
 anagram(str,str1)
 { 
 let a = 0;
-if (str.length == str1.length) {
-var string1 = str.toLowerCase().replace(/[^a-z\d]/g, '').split('').sort().join('');
-var string2 = str1.toLowerCase().replace(/[^a-z\d]/g, '').split('').sort().join('');
+if (str.length != str1.length)
+ {
+console.log("not anagram");
+return;
+ }
+var string1 = str.toLowerCase().split('').sort().join('');
+var string2 = str1.toLowerCase().split('').sort().join('');
 for (var i = 0; i <str.length; i++) {
 if (string1[i] == string2[i])  {
 a++;
@@ -53,10 +53,24 @@ console.log("anagaram");
  }
 else { console.log("not anagram");
 }
+
+},
+
+couponNumberGenerator()
+{
+var Utility = require('../../Utility/programs/utility'); 
+var readline = Utility.input();
+var num=readline.question("enter the no you want to enter ");
+var  letters=["a","b","c","d","e","f","g","h","s","i","j","k","l","m","n","o","1","2","3","4","5","6","7","8","9","10"];  
+coupon="";
+random =(Math.random()*num);
+while(random>0)
+{	
+coupon=letters[Math.floor(random % letters.length)];
+random= Math.floor(random/letters.length);
 }
-else{
-console.log("not anagram");
-}},
+console.log("Coupon: "+coupon);
+},
 
 harmonic(str)
 {var add=0;
@@ -104,7 +118,7 @@ else{ console.log(year+" is not leap year");
 }
 },
 
-string(string1,string2)
+stringrep(string1,string2)
 {
 if(string2.length<=3)
 {
@@ -130,7 +144,7 @@ for(var num=1;num<=i;num++)
  {
 if(i%num==0)
 {
-add=add+1; }
+add++; }
 }
 if(add==2)
 {
@@ -156,7 +170,7 @@ var final=0;
 while(number!=0)
 {
 let rem = number%10;
-number = parseInt(number/10);  
+number = Math.floor(number/10);  
 final = final*10+rem; 
 }
 if(final==num1)
@@ -272,8 +286,9 @@ console.log(farhenit);
 },
 
 
-Anagram1: function(str1,str2)
+Anagram: function(str1,str2)
 {
+  
 if(str1.length!=str2.length)
 return false;
 else
