@@ -28,16 +28,16 @@ var readline=Utility.input();
 
 /** 
  * @description variable is declared to enter the no of flips to toss
- * @var {input} flip
+ * @var {number} flip
  */
 
 var flip=readline.question("enter the no of flips to toss");
 
 /** 
  * @description it is used to acquire randomnum function
- * @var {input} readline
+ * @var {number} flip
  */
-Utility.randomnum(flip);
+Utility.flipCoin(flip);
             
 
    

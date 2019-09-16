@@ -31,7 +31,10 @@ var amount=readline.question(' enter the notes you wnt to have');
 
 /** 
  * @description variable is declared to use to require Atm function.
- * @var {Atm} amount
+ * @var {number} amount
  */
+
 Utility.Atm(amount);
+
+
 

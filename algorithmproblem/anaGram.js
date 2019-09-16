@@ -34,13 +34,13 @@ var str = rl.question("enter the number of str");
 
 /** 
  * @description variable is declared to use to require prime function.
- * @var {prime}str1
+ * @var {string}str1
  */
 var str1 = rl.question("enter the number of str1 ");
 
 /** 
  * @description variable is declared to require anagram function.
- * @var {anagram} str,str1
+ * @var {string,string} str,str1
  */
 Utility.anagram(str,str1);
 

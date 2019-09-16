@@ -27,27 +27,29 @@ var Utility=require('../../Utility/programs/utility');
 var readline=Utility.input();
 /** 
  * @description  variable is declared to use to define the range of primary number from 0-1000.
- * @var {string} str
+ * @var {number} str
  */
 
 var str=1000;
 /** 
- * @description variable is declared to use to acquire increment class.
- * @var {prime} increment
+ * @description variable is declared to use to acquire prime function.
+ * @var {number} increment
  */
-var increment=Utility.prime(1000);
+var increment=Utility.prime(str);
+
 /** 
- * @description variable is declared to use to define the message to enter the number.
- * @var {string} str
+ * @description variable is declared to split the increment variable.
+ * @var {string} array
  */
 
-let array=increment.split(' ');
+var array=increment.split(' ');
+
 /** 
- * @description variable is declared to use to define the message to enter the number.
+ * @description variable is declared print the array
  * @var {string} str
  */
-
 console.log(array);
+
   
 for(var i=2;i<array.length;i++)
 {
@@ -60,7 +62,6 @@ console.log(array[i]+" "+array[j]+" are anagrams");
 }
 }
 }
-
 Utility.palindrome(array);
 
     

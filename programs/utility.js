@@ -1,10 +1,19 @@
 
 module.exports ={
+  /** 
+ * @description input function is used to read readline  sync
+ * @var {} 
+ */
 input()
 {
 var readline=require('readline-sync')        
 return readline;
 },
+
+/** 
+ * @description Array2d function to create 2D array  
+ * @var {number,number} row,col
+ */
 
 Array2d(row,col)
 { 
@@ -22,9 +31,9 @@ console.log(geek[k]);
 console.log("enter the number");
 for(let i=0;i<row;i++)
 {
- for(let j=0;j<col;j++)
+for(let j=0;j<col;j++)
 {
-  geek[i][j]=readline.question(" ");
+geek[i][j]=readline.question(" ");
 }
 }
 console.log("enter the output");
@@ -32,14 +41,19 @@ console.log(geek);
 return geek;
 },
 
+/** 
+ * @description  anagram function isused to check whether both the strings are anagram or not
+ * @var {string,string}str,str1
+ */
 anagram(str,str1)
 { 
 let a = 0;
 if (str.length != str1.length)
- {
-console.log("not anagram");
-return;
- }
+{
+console.log(str+" "+" "+str1 +" are not anagram");
+return false;
+}
+else{
 var string1 = str.toLowerCase().split('').sort().join('');
 var string2 = str1.toLowerCase().split('').sort().join('');
 for (var i = 0; i <str.length; i++) {
@@ -49,42 +63,83 @@ a++;
 else { }
 }
 if (a == string1.length) {
-console.log("anagaram");
- }
-else { console.log("not anagram");
+console.log(str+" "+" "+str1 +" are anagaram ");
+return true;
+}
+else { console.log(str+" " +" " +str1 +" are not anagram");
+return false;
 }
 
+}
 },
 
-couponNumberGenerator()
+/** 
+ * @description  couponNumberGenerator is used to create a random coupon every new time
+ * @var {number}num
+ */
+couponNumberGenerator(num)
 {
-var Utility = require('../../Utility/programs/utility'); 
-var readline = Utility.input();
-var num=readline.question("enter the no you want to enter ");
+  if(isNaN(num))
+  {
+    console.log("enter only  number")
+  }
 var  letters=["a","b","c","d","e","f","g","h","s","i","j","k","l","m","n","o","1","2","3","4","5","6","7","8","9","10"];  
-coupon="";
-random =(Math.random()*num);
+var coupon="";
+if(num>0)
+{
+var random =(Math.random()*num);
+
 while(random>0)
 {	
-coupon=letters[Math.floor(random % letters.length)];
+coupon+=letters[Math.floor(random % letters.length)];
 random= Math.floor(random/letters.length);
 }
 console.log("Coupon: "+coupon);
+}
+else{
+  return false;
+
+}
+return true;
 },
 
+/** 
+ * @description  harmonic function is used to calculate harmonic values
+ * @var {number}str
+ */
 harmonic(str)
-{var add=0;
+
+{
+  if(isNaN(str))
+  {
+    console.log("enter only  number")
+  }var add=0;
 if(str>0)
 {
 for(var i=1;i<=str;i++)
 {add=add+1.0/i;  
 }
 console.log(add);
+return true;
 }
+return false;
 },
 
+
+
+
+/** 
+ * @description  Gamble function is used to calculate no of wins and loss
+ * @var {number,number,number}goal,stack,n
+ */
 Gambler(goal,stack,n)
-{let bet=0;
+{
+if(stack<0)
+{
+return false;
+}
+else{
+var bet=0;
 let loss=0;
 let win=0;
 for(let i=0;i<n;i++)
@@ -102,28 +157,47 @@ if(cash==goal)
 win++;  
 }
 loss=n-win;
-console.log(win);
+console.log("no of wins "+win);
 let perwin=(win/n)*100;
-console.log(perwin );
+console.log("no of win percentage " + perwin );
 let perloss=(loss/n)*100;
-console.log(perloss);
+console.log("no of loss percentage " + perloss);
+return true;
+}
 },
 
+
+/** 
+ * @description  leap year function to check whether the year is leap year or not
+ * @var {number} year
+ */
 leapYear(year)
 {
+if(year<=0)
+{
+return false;
+}
+else{
 if((year%400==0) || (year%4==0)&&(year%100!=0))
 {console.log("leap year",year);
 }
 else{ console.log(year+" is not leap year");
 }
+return true;
+}
 },
 
+
+/** 
+ * @description  stringrep function to replace a string with another string
+ * @var {string,string}string1,string2
+ */
 stringrep(string1,string2)
 {
 if(string2.length<=3)
 {
 console.log("enter character more than 3");
-return;
+return false;
 }
 else
 {
@@ -131,15 +205,24 @@ var arr=string1.split(" ");
 var replacedString=string1.replace('<<UserName>>',string2);
 var arrChanged=replacedString.split(" ");
 console.log(arrChanged);
+return true;
 }
 },
 
+/** 
+ * @description  prime function is declared to use to calculate prime number
+ * @var {number}prime
+ */
 prime(str)
 {
-  if(str<0)
+  if(isNaN(str))
   {
-    return -1;
+    console.log("enter only  number")
   }
+if(str<0)
+{
+return -1;
+}
 let add= 0;
 let increment=" ";
 for(var i=1;i<=str;i++)
@@ -160,11 +243,13 @@ add=0;
 }  
 }
 console.log(increment);
-
-return 1;
-
+return increment;
 },
 
+/** 
+ * @description  palindrome function is to calculate the palindrome numbers
+ * @var {array} array
+ */
 palindrome(array)
 {
 var increment=" ";
@@ -175,7 +260,7 @@ var num1=number;
 var final=0;
 while(number!=0)
 {
-let rem = number%10;
+let rem = Math.floor(number%10);
 number = Math.floor(number/10);  
 final = final*10+rem; 
 }
@@ -188,8 +273,21 @@ console.log("palindrome nos are");
 console.log(increment);
 },
 
-randomnum(flip)
+/** 
+ * @description  flipcoin function is used to calculate the no of heads and tails
+ * @var {number}flip
+ */
+flipCoin(flip)
 {
+  if(isNaN(flip))
+  {
+    console.log("enter only  number")
+  }
+if(flip<=0)
+{
+  return false;
+}
+else{
 var tail=0;
 var head=0;
 for(var i=0;i<flip;i++)
@@ -200,20 +298,26 @@ if(Math.random()>0.50)
 else
 {head++; }
 }   
-console.log(head);
-console.log(tail);           
+console.log("no of heads "+head);
+console.log("no of tails "+tail);           
 var percentageHead=(head/flip)*100;
 var percentageTail=(tail/flip)*100;
-console.log (percentageHead);
-console.log(percentageTail);
+console.log ("no of percentage of head "+percentageHead);
+console.log("no of percentage of tail "+percentageTail);
+return true;
+}
 },
 
+/** 
+ * @description  quadratic class is used to calculate the value of roots
+ * @var {number,number,number} a,b,c
+ */
 quadratic(a,b,c)
 {
-var delta = b*b-4*a*c; 
-var delta1=Math.abs(delta);
-console.log("delta value is",delta1);
-var sqrt=Math.sqrt(delta1);
+var delta = Math.abs(b*b-4*a*c); 
+
+console.log("delta value is",delta);
+var sqrt=Math.sqrt(delta);
 console.log("sqrt value is",sqrt);
 var root1 = (-b+sqrt/2*a); 
 var root2 = (-b-sqrt/2*a); 
@@ -222,7 +326,17 @@ console.log(root2);
 return 1;
 },
 
+/** 
+ * @description  bubbblesort is used to sort an array using bubblesort serach
+ * @var {number,array} row,arr
+ */
 bubbleSort(row,arr)
+{
+if(row<=0)
+{
+  return false;
+}
+else
 {
 for(let i=0;i<row-1;i++)
 {
@@ -237,10 +351,20 @@ arr[j+1]=temp;
 }
 }
 console.log(arr);
+}
+return true;
 },
 
+/** 
+ * @description insertionsort function is used to sort an array using insertionsort search
+ * @var {number,array} row,arr
+ */
 insertionSort(row,arr)
 {
+  if(isNaN(row))
+  {
+    console.log("enter only  number")
+  }
 console.log(arr);
 for(var i=1;i<row;i++)
 {
@@ -254,6 +378,10 @@ arr[j+1]=temp;
 console.log(arr);
 },
 
+/** 
+ * @description  array1d is used to declare 1D array 
+ * @var {number} row
+ */
 
 array1D(row)
 {
@@ -268,34 +396,61 @@ arr[i]=readline.question("");
 return arr;
 },
 
+/** 
+ * @description  Atm function is used to calculate the fewest notes to return
+ * @var {number}amount
+ */
 Atm(amount)
 {
 let arr=['1','2','5','10','20','50','100','200','500','2000'];
-// var notes=[];
-let a=arr.length;
-for(let i=a-1;i>0;i--)
+if(isNaN(amount))
+{
+  console.log("enter only the  number ")
+}
+else{
+  
+}
+if(amount>0)
+{
+for(let i=arr.length-1;i>0;i--)
 {
 if(amount >= arr[i])
 {
- sum=Math.floor(amount/arr[i]);
- amount=amount-arr[i]*sum;
-  console.log(arr[i]+"*"+sum);
+sum=Math.floor(amount/arr[i]);
+amount=amount-arr[i]*sum;
+console.log("The notes to be returned"+arr[i]+"*"+sum);
 }
+}
+return true;
+}
+else{
+  return false;
 }
 },
 
+/** 
+ * @description  temperatureconversion function is declared to use to convert farheniet 
+ * into celcius and vice versa
+ * @var {number} farheniet
+ */
 temperatureConversion(farheniet)
 {
+  if(isNaN(farheniet))
+  {
+    console.log("enter only  number")
+  }
 var celcius=(farheniet-32)*5/9;
 var farhenit=(celcius*5/9)+32;
 console.log(celcius);
 console.log(farhenit);
 },
 
-
+/** 
+ * @description Anagram function is used to check both the string are equal or not
+ * @var {array,array} str,str1
+ */
 Anagram: function(str1,str2)
 {
-  
 if(str1.length!=str2.length)
 return false;
 else
@@ -316,6 +471,10 @@ return true;
 }
 },
 
+/** 
+ * @description  binaryseach function is used to find an element using binary search recursive approach
+ * @var {array,number,number,number} arr,x,start,end
+ */
 binarysearch:function recursivefunction(arr,x,start,end)
 {  
 if(start>end)

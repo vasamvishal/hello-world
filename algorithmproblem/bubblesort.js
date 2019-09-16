@@ -48,9 +48,10 @@ console.log(arr);
 
 /** 
  * @description  used for accesing bubbleSort function.
- * @var {number} row,col
+ * @var {number,number} row,col
  */
 Utility.bubbleSort(row,arr);
+
 
 
  

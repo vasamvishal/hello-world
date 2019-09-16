@@ -42,7 +42,7 @@ var n =readline.question("enter the no of turns u want to play");
 
 /** 
  * @description  it is used to require Gambler function
- * @var {Gambler} goal,stack,n
+ * @var {number} goal,stack,n
  */
 Utility.Gambler(goal,stack,n);
 

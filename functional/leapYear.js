@@ -32,7 +32,7 @@ var readline=Utility.input();
 var year=readline.question("enter the year");
 /** 
  * @description  it is used to require leapYear function
- * @var {leapYear} year
+ * @var {number} year
  */
 Utility.leapYear(year);
 

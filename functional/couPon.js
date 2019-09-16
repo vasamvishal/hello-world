@@ -19,10 +19,24 @@
   var Utility = require('../../Utility/programs/utility'); 
 
   /** 
- * @description  it is used to require couponNumberGenerator.
- * @var {} 
+ * @description  variable is declared to use to acquire input class
+ * @var {input} readline
  */
-  Utility.couponNumberGenerator();
+var readline=Utility.input();
+
+/** 
+ * @description  variable is declared to use to enter the notes
+ * @var {number} num
+ */
+  var num=readline.question("enter the no you want to enter ");
+
+  /** 
+ * @description  it is used to require couponNumberGenerator.
+ * @var {number} num
+ */
+
+
+  Utility.couponNumberGenerator(num);
     
     
     

@@ -29,11 +29,10 @@ var readline=Utility.input();
  * @var {number} str
  */
 var str=parseInt(1000);
-console.log(typeof str)
 
 /** 
  * @description variable is declared to require prime function.
- * @var {prime} str
+ * @var {number} str
  */
 
 Utility.prime(str);

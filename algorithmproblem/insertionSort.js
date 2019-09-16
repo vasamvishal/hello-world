@@ -41,6 +41,6 @@ var arr=Utility.array1D(row);
 
 /** 
  * @description  it is used to access insertionSort function
- * @var {number} row
+ * @var {number,array} row,arr
  */
 Utility.insertionSort(row,arr);

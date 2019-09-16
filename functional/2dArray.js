@@ -39,7 +39,7 @@ var col=readline.question("Enter the col you want to enter");
 
 /** 
  * @description  it is  to require the  use of  Array2d function
- * @var {number} Array2d
+ * @var {number,number} row,col
  */
 Utility.Array2d(row,col);
 

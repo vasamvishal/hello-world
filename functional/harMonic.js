@@ -33,6 +33,6 @@ var str=readline.question("Enter the no you want to enter");
 
 /** 
  * @description  variable is declared to use to require harmonic number
- * @var {harmonic} str
+ * @var {number} str
  */
 Utility.harmonic(str);

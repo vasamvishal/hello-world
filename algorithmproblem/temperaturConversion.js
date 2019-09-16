@@ -30,9 +30,9 @@ var readline=Utility.input();
  * @var {number} farheniet
  */
 var farheniet=readline.question("enter the number in farheniet");
-
+var farheniet1=parseInt(farheniet);
 /** 
  * @description it is declared to use to require farheniet function.
- * @var {farheniet} temperatureConversion
+ * @var {number} farheniet
  */
-Utility.temperatureConversion(farheniet);
+Utility.temperatureConversion(farheniet1);

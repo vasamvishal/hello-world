@@ -44,7 +44,7 @@ var c=readline.question("enter the number of c ");
 
 /** 
  * @description  variable is used to require quadratic function
- * @var {quadratic} a,b,c
+ * @var {numbers} a,b,c
  */
 Utility.quadratic(a,b,c);
 
