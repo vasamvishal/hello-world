@@ -22,10 +22,11 @@ var readline=Utility.input()
 var geek=new Array(row);
 for(let k=0;k < row;k++)
 {
-geek[k]=new Array(col);
+console.log(geek);
 }
-for(let k=0;k < row;k++)
+for(let k=0;k < col;k++)
 {
+geek[k]=new Array(col);
 console.log(geek[k]);
 }
 console.log("enter the number");
@@ -351,8 +352,10 @@ arr[j+1]=temp;
 }
 }
 console.log(arr);
-}
 return true;
+
+}
+
 },
 
 /** 
@@ -423,7 +426,7 @@ console.log("The notes to be returned"+arr[i]+"*"+sum);
 }
 return true;
 }
-else{
+else{a++;
   return false;
 }
 },
@@ -471,27 +474,35 @@ return true;
 }
 },
 
+
 /** 
  * @description  binaryseach function is used to find an element using binary search recursive approach
  * @var {array,number,number,number} arr,x,start,end
  */
 binarysearch:function recursivefunction(arr,x,start,end)
 {  
+  
 if(start>end)
 {
+  console.log(x);
 return false;
 }
 var mid=Math.floor((start+end)/2);
+
 if(arr[mid]==x)
 {
+  
 return true;
 }
 if(arr[mid]>x)
 {
+  
 return recursivefunction(arr,x,start,mid-1);
+
 }
 if(arr[mid]<x)
 {
+ 
 return recursivefunction(arr,x,mid+1,end);
 }
 },
