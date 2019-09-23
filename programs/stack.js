@@ -12,9 +12,15 @@ class Stack
     {
         this.top=null;
     }
-
+ //for pushing elements into queue
     push(data)
     {
+        if(data==undefined||data<0||isNaN(data))
+        { 
+         console.log("!!please enter correct value!!");
+         return ;
+        }
+        
         let node=new Node(data);
         if(this.top)
         {
@@ -27,6 +33,7 @@ class Stack
         }
 
     }
+    //for poping elements out of stack
     pop()
 
     { 
@@ -44,6 +51,7 @@ class Stack
          
         }
     }
+    //for printing the stack
     showdata()
     {
         while(this.top!=null)

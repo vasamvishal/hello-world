@@ -53,8 +53,8 @@ while(initialMoney>0)
     * @description  variable is declared to use to acquire Queue class
     * @var {number} count
     */
-    var choice=readline.question("enter the value ");
-    if(choice===undefined||choice<0||choice>4||isNaN(choice))
+    var choice=parseInt(readline.question("enter the value "));
+    if(choice==undefined||choice<0||choice>4||isNaN(choice))
         { 
         console.log("!!please enter correct value!!");
         return ;
@@ -85,9 +85,9 @@ while(initialMoney>0)
              /** 
              * @description  variable is declared to use to total balance.
              * @var {number} count
-               */
+             */
              console.log("total balance is "+initialMoney);
-              
+        
              console.log("person have entered the money now dequeue")
              /** 
              * @description  variable is declared to use to acquire Queue class

@@ -104,11 +104,15 @@ remove(value)
 {
 let index = hash(value,size);
 let deleted = false;
-
+//for deletion of an single item
 if(ll[index].length === 1 && ll[index][0] === value)
-      delete ll[index]; 
-      else 
+{
+ delete ll[index][0]; 
+}
+     else 
     {
+      //for deletion of elements inside array
+
       for (var i = 0; i < ll[index].length; i++) 
       {
         if (ll[index][i] === value)
@@ -132,13 +136,14 @@ console.log(ll);
  * @var {number} ht
  */
 let ht = new hashTable();
+
+ht.add(12);
+ht.remove(12);
+ht.add(12);
 ht.add(66);
-ht.add(77);
-ht.add(88);
 
 /** 
  * @description  variable is declared to use to acquire print function
  * @var {number} o
  */
 const o=ht.print();
- fs.writeFileSync("./unorderedlist.txt",o);

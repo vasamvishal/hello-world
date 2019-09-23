@@ -7,11 +7,12 @@ class Node{
     }
 }
 class LinkedList{
-    constructor(element)
+    constructor()
      { 
         this.head=null;
         this.size=0; 
     }
+//inserting elements
 insertAtElement(element)
 {
 var node=new Node(element);
@@ -22,8 +23,8 @@ this.head=node;
 }
 else{
  current=this.head;
-while(current.next!=null)
-{
+ while(current.next!=null)
+ {
  current=current.next;
  }
 current.next=node;
@@ -31,17 +32,22 @@ current.next=node;
     this.size++;
     
 }
+//for getting size
+getsize()
+{
+return this.size;
+}
 printListData()
 { var string=" ";
-    let current=this.head;
-    while(current)
+  let current=this.head;
+  while(current)
     {
-   string=string+" "+current.data;
+    string=string+" "+current.data;
     current=current.next;
     }
     return string;
 }
-
+// for deletion of element
  deleteElement(element)
 {
  var current=this.head;
@@ -53,6 +59,32 @@ printListData()
    return true;
   }
   current=current.next;
+}
+}
+
+//for sorting elements
+sortList()
+{    
+var curr = this.head,
+index = null,
+temp;
+if(this.head == null)
+return;
+while(curr.next != null)
+{
+index = curr.next;
+while(index != null)
+{
+if(curr.data > index.data)
+{
+
+temp = curr.data;
+curr.data=index.data;
+index.data=temp;
+}
+index=index.next;
+}
+curr=curr.next;
 }
 }
 }

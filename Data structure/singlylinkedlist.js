@@ -70,7 +70,7 @@ fs.readFile('input.txt','utf-8',(err,data)=>{
    }
  /** 
  * @description  variable is declared to use to print linked list
- * @var {number} print
+ * @const {number} print
  */  
     const print=n1.printListData();
     //fow writing into file

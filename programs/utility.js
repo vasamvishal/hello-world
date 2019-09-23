@@ -247,6 +247,31 @@ console.log(increment);
 return increment;
 },
 
+isPrime(str)
+{ 
+  let count=0;
+  if(str>0)
+  {
+    for(let i=1;i<1000;i++)
+    {
+      if(str%i==0)
+      {
+        count++;
+      }
+    }
+  }
+      if(count==2)
+      {  
+        
+        count=0;
+        
+        return true;
+      
+    
+    
+  }
+
+},
 /** 
  * @description  palindrome function is to calculate the palindrome numbers
  * @var {array} array
@@ -453,7 +478,7 @@ console.log(farhenit);
  * @var {array,array} str,str1
  */
 Anagram: function(str1,str2)
-{
+{  var string="";
 if(str1.length!=str2.length)
 return false;
 else
@@ -461,15 +486,17 @@ else
 var string1 = [];
 var string2 = [];
 string1 = str1.split('').sort().join('');
+
 string2 = str2.split('').sort().join('');
+
 for(var i = 0;i<str1.length;i++)
 {
 if(string1[i]!=string2[i])
 {
 return false;
-break;
 }	
 }
+
 return true;
 }
 },

@@ -21,7 +21,7 @@ var Utility=require("../programs/utility");
  * @description  variable is declared to use to acquire Queue class
  * @var {input} src
  */
-var src=require('../programs/Queue');
+var src=require('../programs/QueuePrime');
 /** 
  * @description  variable is declared to use to string.
  * @var {number} string
@@ -64,13 +64,23 @@ string=string+array[i]+" "+array[j]+" ";
  * @var {number} array
  */  
 
-
-
 console.log(string);
+/** 
+ * @description  variable is declared to used to split the  array
+ * @var {number} array
+ */ 
+
 var array=string.split(" ");
 
-console.log(b);
+/** 
+ * @description  variable is declared to use to sort an array
+ * @var {number} array1
+ */ 
 var array1=array.sort();
+/** 
+ * @description  variable is declared to use to print array
+ * @var {number} array1
+ */ 
 console.log(array1);
 
 
@@ -78,10 +88,11 @@ console.log(array1);
  * @description  variable is declared to use to print linked list
  * @var {number} queue
  */  
-let Queue=new src.Queue();
+let Queue=new src.Queue1();
 for(let i=0;i<array.length;i++)
 {
- Queue.enqueue(array[i]);
+ Queue.addElement(array[i]);
 }
 
- Queue.printQueueanagram();
+
+ Queue.PrintQueue();

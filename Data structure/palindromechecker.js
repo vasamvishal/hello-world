@@ -38,11 +38,15 @@ const array=readline.question("enter the string");
 
 //palindrome function
 palindrome=(array)=>{
+   if(array==undefined||array==null||array<=0)
+   {
+      return null;
+   }
    /** 
  * @description  variable is declared to use to print array;
  * @var {number} array
  */
-console.log(array);
+ //console.log(array);
 /** 
  * @description  variable is declared to use to deque function
  * @var {number} queue
@@ -56,9 +60,9 @@ for (let i = 0; i < array.length; i++)
  * @description  variable is declared to use to print PrintQueue
  * @var {number} printQueue
  */
-console.log(queue.printQueue());
+//console.log(queue.printQueue());
 
-while (queue.size() > 1  )
+while (queue.size() > 1 )
 {
  /** 
  * @description  variable is declared to use to acquire removefront function
@@ -77,8 +81,12 @@ if (first !== last)
 }
 return true;
 }
-
 //calling a palindrome function
+if(palindrome(array)==null)
+{
+   console.log("enter a proper string "); 
+   return;
+}
 if(palindrome(array)==false)
 {
 console.log("not an string");

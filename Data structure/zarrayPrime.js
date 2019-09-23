@@ -13,15 +13,16 @@ Prime module to determine the columns for second dimension of 2D array.
 *********************************************************************************************/ 
 
 /** 
- * @description  variable is declared to use to acquire Queue class
+ * @description  variable is declared to use to acquire Utility class
  * @var {input} src
  */
 var src = require('../programs/utility');
 
 
-//function of 2d array
+//function of prime array
 Prime = (array) =>
 {
+    
 let start = 1, end = 100;
 for(let i=0;i<array.length;i++)
 {	
@@ -39,7 +40,7 @@ end = end + 100;
 }
 }
 
-//calling 2d array
+//calling prime array
 (print = () =>
 {
 var array = new Array(10);

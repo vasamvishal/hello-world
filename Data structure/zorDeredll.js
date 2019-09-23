@@ -1,4 +1,21 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node orderedll.js 
+*
+*Purpose      :  To sort an linked list using bubble sort
+*
+*@description  
+*
+*@file        :  orderedll.js
+*@overview    :  linked list to add values to linked list and sort to sort an array using soting technique
+*@author	 :  Vishal Vasam <vasamvishal12@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/ 
+
 const fs = require('fs');
+/** 
+ * @description  variable is declared to use to acquire Utility class
+ * @var {input} src
+ */
 var src = require('../programs/utility');
 
 // User defined class node 
@@ -174,13 +191,9 @@ for(var i = 0;i<c.length;i++)
 {
 ll.add(c[i]);
 }    
+
  
-ll.insertAt(45,4);
-ll.removeElement(100);
-ll.removeElement(10);
-ll.removeElement(15);
-ll.removeElement(25);
 ll.sortList();
-var o = ll.printList();
-console.log(o);
+ var o = ll.printList();
+ console.log(o);
 var outputFile = fs.writeFileSync("temp.txt",o);
