@@ -30,7 +30,7 @@ var readline=Utility.input();
  * @var {number} str
  */
 
-var str=1000;
+var str=100;
 /** 
  * @description variable is declared to use to acquire prime function.
  * @var {number} increment
@@ -50,19 +50,24 @@ var array=increment.split(' ');
  */
 console.log(array);
 
-  
+  var string='';
 for(var i=2;i<array.length;i++)
 {
 for(var j=i+1;j<array.length;j++)
 {
 
-if(Utility.Anagram(array[i],array[j]))
+if(Utility.Anagram(array[i],array[j])==false)
 {
-console.log(array[i]+" "+array[j]+" are anagrams");	
+
+}
+else{
+    string=string+array[i]+" "+array[j]+" ";
+    console.log(string);
+    console.log(array[i]+" "+array[j]+" are anagrams");	
 }
 }
 }
-Utility.palindrome(array);
+// Utility.palindrome(array);
 
     
         

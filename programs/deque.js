@@ -11,16 +11,16 @@ class Deque {
         if(item==undefined||item<=0)
         { 
          console.log("!!please enter correct value!!");
-         return ;
+         return null ;
         }
         this.items.unshift(item);
     }
   //for adding elements at rear
     addRear(item) {
-        if(item==undefined||item<=0)
+        if(item==undefined||item<=0||item==null)
         { 
          console.log("!!please enter correct value!!");
-         return ;
+         return null ;
         }
         this.items.push(item);
     }

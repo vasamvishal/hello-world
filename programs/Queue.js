@@ -10,7 +10,7 @@ enqueue(element)
     if(element==undefined||element<0||isNaN(element))
              { 
               console.log("!!please enter correct value!!");
-              return ;
+              return null ;
              } 
     this.items.push(element); 
    
@@ -32,10 +32,10 @@ isEmpty()
 //for adding money 
 addMoney(money,initialMoney)
 { 
-    if(money==undefined||money<0||isNaN(money))
+    if(money==undefined||money<=0||isNaN(money))
     { 
      console.log("!!please enter correct value!!");
-     return ;
+     return null ;
     }
     initialMoney=initialMoney+money;
     return initialMoney;
@@ -46,7 +46,7 @@ withdrawMoney(money,initialMoney)
     if(money==undefined||money<0||isNaN(money))
     { 
               console.log("!!please enter correct value!!");
-              return ;
+              return null;
     }
     console.log(initialMoney);
     if(money>initialMoney)

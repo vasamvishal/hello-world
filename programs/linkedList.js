@@ -15,12 +15,19 @@ class LinkedList{
 //inserting elements
 insertAtElement(element)
 {
+if(element==undefined||element==null)
+{
+    console.log("enter correct number");
+    return null;
+}
+
 var node=new Node(element);
 var current;
 if(this.head==null)
 {
 this.head=node;
 }
+
 else{
  current=this.head;
  while(current.next!=null)
@@ -50,6 +57,11 @@ printListData()
 // for deletion of element
  deleteElement(element)
 {
+    if(element==undefined||element==null)
+    {
+        console.log("enter correct number");
+        return null;
+    }
  var current=this.head;
   while(current.next!=null)
   {

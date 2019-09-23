@@ -9,7 +9,7 @@ class Stack {
         if(element==undefined||element<0)
         { 
          console.log("!!please enter correct value!!");
-         return ;
+         return null;
         }  
     this.items.push(element);    
     } 
@@ -35,6 +35,7 @@ class Stack {
     for (var i = 0; i < this.items.length; i++) 
     str += this.items[i] + " "; 
     return str; 
+    
     } 
 }
     module.exports={
