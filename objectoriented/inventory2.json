@@ -31,6 +31,11 @@
             "name": "brownwheat",
             "weight": 1,
             "price": 80
+        },
+        {
+            "name": "durum",
+            "weight": 1,
+            "price": 45
         }
     ],
     "pulses": [

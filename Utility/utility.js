@@ -1,12 +1,35 @@
-
+var readline = require('readline-sync');
+var validationRule = /^\s{1,}$/;
 module.exports = {
   /** 
  * @description input function is used to read readline  sync
  * @var {} 
  */
   input() {
+   
     var readline = require('readline-sync')
     return readline;
+    
+  },
+  inputInt()
+  {
+    let input=parseInt(readline.question("Input"));
+   
+    if (input == undefined || input == null || isNaN(input) || validationRule.test(input) == true) {
+      console.log("Value is undefined");
+      return false ;
+    }
+    return input;
+   
+  },
+  inputString()
+  {
+    let input=(readline.question("Input"));
+    if (input == undefined || input == null || !isNaN(input) || validationRule.test(input) == true) {
+      console.log("Value is undefined");
+      return false ;
+    }
+    return input;
   },
 
   /** 

@@ -83,7 +83,7 @@ for (let i = 0; i < exp.length; i++)
       //check whether the stack is empty or not and pop//
     }
     else {
-      console.log("wrong characters");
+      console.log("mismatch characters");
       return;
     }
   }
