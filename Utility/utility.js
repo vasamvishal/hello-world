@@ -29,7 +29,11 @@ module.exports = {
       console.log("Value is undefined");
       return false ;
     }
+    else
+    {
+
     return input;
+    }
   },
 
   /** 
