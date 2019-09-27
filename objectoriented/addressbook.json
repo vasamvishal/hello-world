@@ -1,0 +1,13 @@
+{
+    "list": [
+        {
+            "firstName": "vas",
+            "lastName": "raul",
+            "address": false,
+            "city": "mum",
+            "state": "maha",
+            "zip": 898989,
+            "phone": 909090909
+        }
+    ]
+}
