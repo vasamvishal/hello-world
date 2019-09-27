@@ -1,5 +1,9 @@
 const assert = require('assert')
+<<<<<<< HEAD
 var Util= require('../../Utility/utility'); 
+=======
+var Util= require('../../programs/utility'); 
+>>>>>>> 43b3571ee16c0fd2360b6864b0fd05e53374bcbd
 
 describe('Atm No', function()  
 {  
