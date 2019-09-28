@@ -1,7 +1,9 @@
-inventory=()=> {
-    var Utility1 = require("../Utility/utility");
+inventory = () => {
+    var fs = require('fs');
+    var object = fs.readFileSync("./inventory2.json");
+    var obj = JSON.parse(object);
+    var Utility1 = require("../utility");
     var readline = Utility1.input();
-    let obj = require('../objectoriented/inventory.json');
     console.log(obj);
     console.log("inventory example");
     console.log("enter the options given down");
@@ -86,15 +88,15 @@ inventory=()=> {
             break;
 
         default:
-            console.log("wrong input"); 
-          return;
+            console.log("wrong input");
+            return;
 
 
     }
-    
+
 }
 module.exports = {
     inventory
 
-    
+
 }

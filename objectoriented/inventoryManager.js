@@ -1,4 +1,4 @@
 
-var src=require("../objectoriented/inventoryClass")
+var src=require("../Utility/oops/inventoryClass")
 var iinventory = new src.Inventory();
 iinventory.inventory1();

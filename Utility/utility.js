@@ -13,7 +13,7 @@ module.exports = {
   },
   inputInt()
   {
-    let input=parseInt(readline.question("Input"));
+    let input=parseInt(readline.question("Input  "));
    
     if (input == undefined || input == null || isNaN(input) || validationRule.test(input) == true) {
       console.log("Value is undefined");
@@ -24,7 +24,7 @@ module.exports = {
   },
   inputString()
   {
-    let input=(readline.question("Input"));
+    let input=(readline.question("Input  "));
     if (input == undefined || input == null || !isNaN(input) || validationRule.test(input) == true) {
       console.log("Value is undefined");
       return false ;

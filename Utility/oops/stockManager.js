@@ -1,26 +1,46 @@
 
 var fs = require('fs');
-var Utility = require("../Utility/utility");
+/** 
+ * @description  variable is declared to use to acquire Utility class
+ * @var {input} Utility
+ */
+var Utility = require("../utility");
+/** 
+ * @description  variable is declared to used to readfilesync 
+ * @var {input} obj
+ */
 var obj = fs.readFileSync("company.json");
+/** 
+ * @description  variable is declared to used to readfilesync
+ * @var {input} obj1
+ */
 var obj1 = fs.readFileSync("user.json");
+/** 
+ * @description  variable is declared to used to parse json file
+ * @var {obj} company
+ */
 var company = JSON.parse(obj);
+/** 
+ * @description  variable is declared to use to acquire Utility class
+ * @var {obj1} user
+ */
 var user = JSON.parse(obj1);
-var readLine = Utility.input();
+//create stockAccount
 class stockAccount {
     constructor() {
 
         
         this.totalprice = 0;
     }
+    //calculate value of sock
     valueof = () => {
         console.log(user);
         for (let i = 0; i < user.stocks.length; i++) {
-            
             this.totalprice += user.stocks[i].shares;
-            console.log(this.totalprice);
         }
+        console.log(this.totalprice);
     }
-
+ //buy the shares of company
     buy = () => {
         console.log(user);
         console.log(company);
@@ -48,17 +68,19 @@ class stockAccount {
        
     }
 
+//sell the shares of user
     sell = () => {
-        console.log(user);
+        
         console.log(company);
-        console.log("Enter the name of shares");
+        console.log(user);
+        console.log("Enter the name of stocks");
         var company_name = Utility.inputString();
         if(company_name==false)
         {
             return;
         }
         
-        console.log("Enter the number of shares");
+        console.log("Enter the number of stocks");
         var shares = Utility.inputInt();
         if (shares == false) {
             return;
@@ -69,8 +91,7 @@ class stockAccount {
                 user.stocks[i].shares = user.stocks[i].shares - quantity;
             }
         }
-        console.log(company);
-        console.log(user);
+        
         for (let i = 0; i < company.shares.length; i++) {
             if (company.shares[i].company_name == company_name && company.shares[i].shares > shares) {
                 var quantity = shares;
@@ -78,15 +99,15 @@ class stockAccount {
                 
             }
         }
-        
-
-
     }
+    //save the shares of user
     save=()=>
     { 
-        fs.writeFileSync("finalreport.json",JSON.stringify(user));
+        fs.writeFileSync("user.json",JSON.stringify(user));
+        fs.writeFileSync("company.json",JSON.stringify(company));
         console.log("file is created");
     }
+    //print the shares of users and company
     print=()=>
     {
         console.log(user);

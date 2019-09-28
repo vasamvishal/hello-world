@@ -1,11 +1,13 @@
-const Utility = require("../Utility/utility")
+const Utility = require("../../Utility/utility")
 const readline = Utility.input();
 class Inventory {
     constructor()
     {}
     inventory1 = () => {
       var fs = require('fs');
-      var obj = fs.readFileSync('./inventory.json');
+      
+      var obj = fs.readFileSync("./inventory.json");
+
       var object = JSON.parse(obj);
       console.log(object);
       console.log("||Enter into Inventory||");
