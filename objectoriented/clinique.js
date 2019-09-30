@@ -1,3 +1,16 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node Clinique.js.
+*
+*Purpose      :  to maintain the adress book
+*
+*@description  
+*
+*@file        : AdressBook.js.
+*@overview    : Address module to maintain the adress book 
+                 
+*@author	 :  Vishal Vasam <vasamvishal12@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 /** 
  * @description  variable is declared to use to acquire Utility class
  * @var {input} Utility
@@ -22,15 +35,15 @@ var obj = fs.readFileSync("clinique.json");
  */
 var object = JSON.parse(obj);
 /** 
- * @description  variable is declared to use to acquire stockAccount class
+ * @description  variable is declared to use to acquire Clinique class
  * @var {input} src
  */
 var src = require("../Utility/oops/clinique");
 /** 
- * @description  variable is declared to use to acquire stockAccount class
+ * @description  variable is declared to use to acquire Clinique class
  * @var {input} clinique
  */
-var clinique = new src.clinique(),
+var clinique = new src.clinique();
     i = 0;
 //for doctor and patient 
 while (i == 0) {
