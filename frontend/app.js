@@ -1,21 +1,26 @@
-var app=angular.module("myApp",['ui.router'])
-app.config(function($stateProvider)
-    {
-        $stateProvider
-        .state("login",{
-            url:'/login',
-            templateUrl:'./templates/login.html',
-            controller:'logincontroller'
+var app = angular.module("myApp", ['ui.router'])
+app.config(function ($stateProvider) {
+    $stateProvider
+        .state("login", {
+            url: '/login',
+            templateUrl: './templates/login.html',
+            controller: 'loginController'
         })
-        .state("registration",{
-            url:'/registration',
-            templateUrl:'./templates/registration.html',
-            controller:'registrationcontroller'
+        .state("registration", {
+            url: '/registration',
+            templateUrl: './templates/registration.html',
+            controller: 'registrationController'
         })
-        .state("forgotpassword",{
-            url:'/forgotpassword',
-            templateUrl:'./templates/forgotpassword.html',
-            controller:'forgotpassword'
-        });
+        .state("forgot", {
+            url: '/forgot',
+            templateUrl: './templates/forgotpassword.html',
+            controller: 'forgotController'
+        })
+        .state('reset',
+            {
+                url: "/reset/:token",
+                templateUrl: './templates/resetpasword.html',
+                controller: "resetController"
+            })
 
-    })
+})
