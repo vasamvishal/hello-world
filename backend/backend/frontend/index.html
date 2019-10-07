@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="myApp" >
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS Plunker</title>
+  <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+ 
+</head>
+<body>
+  <div class="container" width="100px">
+      <h2>Welcome to web chat</h2>
+      <a ui-sref="login">login</a></br>
+      <a ui-sref="registration">registration</a></br>
+      <a ui-sref="forgotpassword">forgotpassword</a></br>
+    
+      <div ui-view></div>
+  </div>
+  <script src="./app.js"></script>
+  <script src="./frontend-controller/user-controller/logincontroller.js"></script>
+  <script src="./frontend-controller/user-controller/register.js"></script>
+  <script src="./frontend-controller/user-controller/forgotpassword.js"></script>
+  <script src="./services//userService.js"></script>
+ 
+</body>
+</html>
