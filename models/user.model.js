@@ -49,7 +49,9 @@ class UserModel {
             else if (result)
                 callback({ message: 'Email already registered' })
             else {
+                
                 bcrypt.hash(body.password, 10, (err, hash) => {
+                   
                     if (err)
                         throw err;
                     const user = new User({
@@ -62,7 +64,7 @@ class UserModel {
                         if (err) {
                             callback(err)
                         } else {
-                            callback(null, data)
+                            callback(null,data);
                         }
                     })
                 })
